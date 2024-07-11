@@ -1,0 +1,34 @@
+.flashcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.flashcard {
+  font-size: 1.4rem;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.3s;
+  aspect-ratio: 2 / 1;
+
+  padding: 2rem;
+  border: 1px solid #e7e7e7;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  background-color: #f7f7f7;
+}
+
+.flashcard.selected {
+  font-weight: 700;
+
+  border: 1px solid #e03131;
+
+  color: #fff;
+  background-color: #e03131;
+}

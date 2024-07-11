@@ -1,5 +1,5 @@
-import { useState } from "react";
 import styles from "./flashcards.module.css";
+import { useState } from "react";
 
 export type FlashcardsProps = {
   flashcardsData: { id: string; question: string; answer: string }[];
@@ -14,14 +14,18 @@ export function Flashcards({ flashcardsData }: FlashcardsProps) {
 
   return (
     <div className={styles.flashcards}>
-      {flashcardsData.map((question) => (
+      {flashcardsData.map((flashcard) => (
         <div
-          key={question.id}
-          onClick={() => handleClick(question.id)}
-          className={styles.question}
+          key={flashcard.id}
+          onClick={() => handleClick(flashcard.id)}
+          className={`${styles.flashcard} ${
+            flashcard.id === selectedId ? styles.selected : ""
+          }`}
         >
           <p>
-            {question.id === selectedId ? question.answer : question.answer}
+            {flashcard.id === selectedId
+              ? flashcard.answer
+              : flashcard.question}
           </p>
         </div>
       ))}
